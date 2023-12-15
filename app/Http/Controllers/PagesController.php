@@ -47,20 +47,16 @@ class PagesController extends Controller
     // Validate the form data
     $request->validate([
         'content' => 'required|string',
+        'subject' => 'required|string',
         'user_id' => 'required|exists:users,id',
     ]);
 
     // Create a new comment, let the database handle the 'blog_id'
-    $comment = Comment::create([
+    $blog = Blog::create([
         'content' => $request->input('content'),
+        'subject' => $request->input('subject'),
         'user_id' => $request->input('user_id'),
     ]);
-
-    // Attach the comment to the blog relationship
-    $blog->comments()->save($comment);
-
-    // Redirect the user back to the original blog page
-    return redirect()->route('blogview', ['blog' => $blog->id])
-        ->with('success', 'Comment created successfully');
+    return redirect()->back();
 }
 }
