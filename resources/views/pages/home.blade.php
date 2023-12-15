@@ -1,7 +1,8 @@
 @extends('base')
 
 @section('content')
-@foreach ($blogs as $blog)
+<div class="mainwidth">
+    @foreach ($blogs as $blog)
     <div class="CreatorWidget">
     <div class="comments">
         <h1>{{ $blog->user->name  }}</h1>
@@ -11,4 +12,5 @@
     </div>
     </div>
 @endforeach
+</div>
 @endsection

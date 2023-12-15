@@ -29,7 +29,8 @@ nav{
 }
 
 main{
-    background-color: rgb(239, 246, 255);
+    padding: 10vh 10vw;
+    background-color: #2E4057;
     min-height: 88vh;
 }
 a{
@@ -41,40 +42,8 @@ a:hover{
     background-color: lightcoral;
 }
 
-/* Widgets */
-.widgetholder{
-    background-color: rgb(226, 226, 226);
-    margin: 10vh 30vw;
+.mainwidth{
     padding: 1vw;
-    border-radius: 30px;
-}
-
-.widget{
-    border-radius: 15px;
-    background-color: rgb(219, 219, 219);
-    text-align: center;
-    padding: 1vw;
-}
-
-.info{
-    display: flex;
-    justify-content: space-between;
-}
-
-.comment{
-    border-top: solid 2px rgba(0, 0, 0, 0.4);
-}
-
-.CreatorWidget{
-    background-color: rgb(226, 226, 226);
-    margin: 10vh 20vw 5vh 20vw;
-    padding: 1vw;
-    border-radius: 30px;
-}
-
-.CommentWidgets{
-    background-color: rgb(226, 226, 226);
-    margin: 10vh 20vw 5vh 20vw;
-    padding: 1vw;
-    border-radius: 30px;
+    border-radius: 25px;
+    background-color: #3a506d;
 }
