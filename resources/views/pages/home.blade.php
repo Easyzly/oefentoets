@@ -1,15 +1,14 @@
 @extends('base')
 
 @section('content')
-<div class="widgetholder">
-    <h1>Komende Wedstrijden:</h1>
-    <div class="widget">
-        <h2>Curio Studenten | Norbertus Gertrudis College</h2>
-        <div class="info">
-            <p>12/12/2012</p>
-            <p>14:30 - 16:00</p>
-            <p>Locatie: Roosendaal Knipplein 14</p>
-        </div>
+@foreach ($blogs as $blog)
+    <div class="CreatorWidget">
+    <div class="comments">
+        <h1>{{ $blog->user->name  }}</h1>
+        <h3 style="border-bottom: 1px black solid">{{ $blog->subject  }}</h3>
+        <h5>{{ $blog->content  }}</h5>
+        <a href="{{ route('blogview', ['blog' => $blog->id]) }}">Join the chat!</a>
     </div>
-</div>
+    </div>
+@endforeach
 @endsection

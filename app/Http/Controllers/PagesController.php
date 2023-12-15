@@ -12,7 +12,8 @@ class PagesController extends Controller
 {
     public function home()
     {
-        return view('pages/home');
+        $blogs = Blog::all();
+        return view('pages/home', compact('blogs'));
     }
 
     public function blogview(Blog $blog)
@@ -22,7 +23,7 @@ class PagesController extends Controller
     }
 
     // oud project + aanpassing samen met chat gpt vooral de validate had ik niet aangedacht
-    public function store(Request $request)
+    public function storeComment(Request $request, Blog $blog)
     {
         // Validate the form data
         $request->validate([
@@ -38,9 +39,6 @@ class PagesController extends Controller
             'blog_id' => $request->input('blog_id'),
         ]);
 
-        // You can add any additional logic here, e.g., redirect to a success page
-
-        return redirect()->route('blogs.show', ['blog' => $request->input('blog_id')])
-            ->with('success', 'Comment created successfully');
+        return redirect()->back();
     }
 }

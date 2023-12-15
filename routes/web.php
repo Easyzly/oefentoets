@@ -20,7 +20,7 @@ Route::get('/base', function (){
 });
 Route::get('/', [PagesController::class, 'home'])->name('home');
 
-Route::get('/blogs/{blog}', [PagesController::class, 'blogview'])->name('blogview');
+Route::post('/comments/store', [PagesController::class, 'storeComment'])->name('storeComment');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/blogs/{blog}', [PagesController::class, 'blogview'])->name('blogview');
 });
 
 require __DIR__.'/auth.php';
