@@ -1,0 +1,61 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+header a, nav a{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+}
+nav a{
+    font-size: x-large;
+}
+.header, nav{
+    padding: 5px 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+.header{
+    background-color: rgb(17, 24, 39);
+}
+nav, nav a{
+    position: sticky; top: 0; z-index: 9;
+}
+
+nav{
+    background-color: rgb(31, 41, 55);
+}
+
+main{
+    background-color: rgb(239, 246, 255);
+    min-height: 88vh;
+}
+a{
+    padding: 2.5px;
+    transition: 0.1s;
+    border-radius: 5px;
+}
+a:hover{
+    background-color: lightcoral;
+}
+
+/* Widgets */
+.widgetholder{
+    background-color: rgb(226, 226, 226);
+    margin: 10vh 30vw;
+    padding: 1vw;
+    border-radius: 30px;
+}
+
+.widget{
+    border-radius: 15px;
+    background-color: rgb(219, 219, 219);
+    text-align: center;
+    padding: 1vw;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
