@@ -1,16 +1,16 @@
 <?php
 
-// File: app/Models/Blog.php
+// File: app/Models/Comment.php
+//chat gpt generated zodat ik niet zelf alles hoef uit te schrijven
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Comment extends Model
 {
     use HasFactory;
-    //chat gpt generated zodat ik niet zelf alles hoef uit te schrijven
 
     /**
      * The attributes that are mass assignable.
@@ -19,15 +19,23 @@ class Blog extends Model
      */
     protected $fillable = [
         'user_id',
-        'subject',
+        'blog_id',
         'content',
     ];
 
     /**
-     * Get the user that owns the blog.
+     * Get the user that owns the comment.
      */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the blog that the comment belongs to.
+     */
+    public function blog()
+    {
+        return $this->belongsTo(Blog::class);
     }
 }
