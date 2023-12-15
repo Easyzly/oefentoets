@@ -29,8 +29,8 @@ nav{
 }
 
 main{
-    padding: 10vh 10vw;
-    background-color: #2E4057;
+    padding: 0vh 10vw;
+    background-color: rgb(226, 226, 226);;
     min-height: 88vh;
 }
 a{
@@ -43,7 +43,13 @@ a:hover{
 }
 
 .mainwidth{
+    padding: 2vw;
+    background-color: #dbdbdb;
+}
+
+.CreatorWidget{
+    border-radius: 5px;
     padding: 1vw;
-    border-radius: 25px;
-    background-color: #3a506d;
+    background-color: rgba(204, 204, 204, 0.2);
+    margin: 1vh 0vw;
 }

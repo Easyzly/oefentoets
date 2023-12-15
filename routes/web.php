@@ -33,4 +33,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/blogs/{blog}', [PagesController::class, 'blogview'])->name('blogview');
 });
 
+Route::post('/blogcreate', [PagesController::class, 'storeBlog'])->name('storeBlog');
+
 require __DIR__.'/auth.php';

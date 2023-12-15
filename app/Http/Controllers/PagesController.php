@@ -41,4 +41,26 @@ class PagesController extends Controller
 
         return redirect()->back();
     }
+
+    public function storeBlog(Request $request, Blog $blog)
+{
+    // Validate the form data
+    $request->validate([
+        'content' => 'required|string',
+        'user_id' => 'required|exists:users,id',
+    ]);
+
+    // Create a new comment, let the database handle the 'blog_id'
+    $comment = Comment::create([
+        'content' => $request->input('content'),
+        'user_id' => $request->input('user_id'),
+    ]);
+
+    // Attach the comment to the blog relationship
+    $blog->comments()->save($comment);
+
+    // Redirect the user back to the original blog page
+    return redirect()->route('blogview', ['blog' => $blog->id])
+        ->with('success', 'Comment created successfully');
+}
 }
