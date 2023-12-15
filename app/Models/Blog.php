@@ -30,4 +30,11 @@ class Blog extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // Blog.php model
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

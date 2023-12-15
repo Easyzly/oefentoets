@@ -59,3 +59,7 @@ a:hover{
     display: flex;
     justify-content: space-between;
 }
+
+.comment{
+    border-top: solid 2px rgba(0, 0, 0, 0.4);
+}
