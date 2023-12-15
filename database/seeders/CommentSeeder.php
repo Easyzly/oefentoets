@@ -1,7 +1,6 @@
 <?php
 
 // File: database/seeders/CommentSeeder.php
-//chat gpt generated zodat ik niet zelf alles hoef uit te schrijven
 
 namespace Database\Seeders;
 
@@ -17,6 +16,14 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        Comment::factory(1)->create(); // Adjust the number of comments as needed
+        // Assuming you have 10 blogs created by BlogSeeder, 
+        // and you want each blog to have 5 comments
+        $blogs = \App\Models\Blog::all();
+
+        foreach ($blogs as $blog) {
+            Comment::factory(5)->create([
+                'blog_id' => $blog->id,
+            ]);
+        }
     }
 }

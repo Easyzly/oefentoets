@@ -12,8 +12,7 @@
         <div class="comments">
           @foreach ($comments as $comment)
             <div class="comment">
-                <h4>{{ $comment->user->name }}</h4>
-                <p>{{ $comment->content }}</p>
+                <h4>{{ $comment->user->name }} | {{ $comment->content }}</h4>
             </div>
           @endforeach
         </div>

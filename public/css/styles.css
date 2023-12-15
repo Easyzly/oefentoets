@@ -53,3 +53,8 @@ a:hover{
     background-color: rgba(204, 204, 204, 0.2);
     margin: 1vh 0vw;
 }
+
+.comment{
+    border-bottom: solid 1px black;
+    padding: 5px 0px;
+}
